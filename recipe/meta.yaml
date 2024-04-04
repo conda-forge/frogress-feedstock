@@ -1,5 +1,5 @@
 {% set name = "frogress" %}
-{% set version = "0.10.0" %}
+{% set version = "0.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 19c801a520fc977f29ed599404ee09d1f77e25b5202146bf5ebabebca3ee53a5
+  sha256: 0150cfb988eeda65e019283a06b69603c26457081c545b1b143d907996bf96d3
 
 build:
   noarch: python
