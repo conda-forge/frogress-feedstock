@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 0150cfb988eeda65e019283a06b69603c26457081c545b1b143d907996bf96d3
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - __unix
 
 test:
@@ -27,6 +27,7 @@ test:
     - frogress
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
